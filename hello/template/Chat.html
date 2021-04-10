@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load static %}
+
+<!-- CSS CUSTOM -->
+<link rel="stylesheet" href="{% static "style.css" %}">
+<link rel="stylesheet" href={% static 'style2.css' %}>
+<link rel="stylesheet" href={% static 'style3.css' %}>
+<script src="{% static 'app.js' %}"></script>
+<title> Chat page </title>
+</head>
+<body>
+<!-- Tab links -->
+<div class="tab">
+  <button class="tablinks" onmouseover="openCity(event, 'Createnew')">Create New group</button>
+  <button class="tablinks" onmouseover="openCity(event, 'Createneww')">Join an existing group</button>
+</div>
+
+<!-- Tab content -->
+<div id="Createnew" class="tabcontent"> 
+<h1> Create a new group <h1>
+
+<div class="Create">
+<form method="post" action="/chat">
+{% csrf_token %}
+<label for="email1">Email: </label>
+<input type="text" name="email1" placeholder="xyz@email.com"><br><br>
+<label for="email2">Email: </label>
+<input type="text" name="email2" placeholder="xyz@email.com"><br><br>
+<label for="email3">Email: </label>
+<input type="text" name="email3" placeholder="xyz@email.com"><br><br>
+<label for="email4">Email: </label>
+<input type="text" name="email4" placeholder="xyz@email.com"><br><br>
+<button class="button">Create New Group</button>
+</form>
+</div>
+</div>
+
+<div id="Createneww" class="tabcontent">
+<h1> Join an existing group </h1>
+<div class="Create">
+<form method="get" action="/chat1">
+{% csrf_token %}
+<label for="email"> Please enter the email: </label><br>
+<input type="text" name="email" placeholder="xyz@email.com"><br><br>
+<button class="button">Join the group</button>
+</form>
+</div>
+
+</body>
+</html>

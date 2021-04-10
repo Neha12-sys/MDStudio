@@ -9,4 +9,6 @@ urlpatterns = [
     path("designing", views.designing, name='designing'),
     path("resources", views.resources, name='resources'),
     path("MConnect", views.MConnect, name='MConnect'),
+    path("chat",views.chat, name="chat"),
+    path('chat1',views.chat1,name="chat1"),
 ]
